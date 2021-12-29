@@ -4,6 +4,7 @@ import { Feather } from "@expo/vector-icons";
 import { TextInput } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { colors } from "../../assets/colors";
+import { fontFamily } from "../../assets/font";
 
 const SearchBarContainer = ({ navigation }) => {
   return (
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 14,
     justifyContent: "space-between",
-    marginBottom: 5
+    marginBottom: 5,
   },
   searchBar: {
     flex: 1,
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     color: colors.gray,  
+    fontFamily: fontFamily.regular
   },
   avatar: { height: 32, width: 32 },
 });

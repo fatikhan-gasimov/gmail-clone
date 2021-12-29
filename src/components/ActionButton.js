@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { colors } from "../../assets/colors";
 import { TouchableOpacity } from "react-native";
+import { fontFamily } from "../../assets/font";
 
 const ActionButton = ({ isVisible, navigation }) => {
   return (
@@ -40,6 +41,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
+    fontWeight: "600",
     marginHorizontal: 5,
+    fontFamily: fontFamily.medium
   },
 });
