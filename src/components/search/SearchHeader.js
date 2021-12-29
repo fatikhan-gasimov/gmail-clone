@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,12 +9,14 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
-const SearchHeader = ({ navigation }) => {
+
+const SearchHeader = (props) => {
+ 
   return (
     <View style={styles.searchBarContainer}>
       <TouchableOpacity
         onPress={() => {
-          navigation.goBack();
+          props.navigation.goBack();
         }}
       >
         <Feather name="arrow-left" size={24} color={colors.gray} />
@@ -23,6 +25,7 @@ const SearchHeader = ({ navigation }) => {
         style={styles.searchBar}
         placeholder="Search in mail"
         autoFocus
+        onChangeText={(text) => props.onChange(text)}
       />
       <MaterialIcons name="keyboard-voice" size={24} color={colors.gray} />
     </View>

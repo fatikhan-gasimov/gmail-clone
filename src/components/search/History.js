@@ -1,11 +1,10 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { search_history } from "../../../assets/search_history";
 import HistoryItem from "./HistoryItem";
 import { colors } from "../../../assets/colors";
 
-const History = () => {
+const History = ({search_history}) => {
   return (
     <FlatList
       showsVerticalScrollIndicator={false}

@@ -38,12 +38,23 @@ const EmailItem = ({ item }) => {
         </Text>
       </View>
       <View style={styles.actionContainer}>
-        <Text style={styles.sentDate}>{item.sentDate}</Text>
+        <Text
+          style={[
+            styles.sentDate,
+            item.isRead ? { color: colors.gray } : styles.read,
+          ]}
+        >
+          {item.sentDate}
+        </Text>
         <TouchableOpacity>
           {item.isSaved ? (
             <FontAwesome name="star" size={22} color={colors.orange} />
           ) : (
-            <FontAwesome name="star-o" size={22} color={colors.gray} />
+            <FontAwesome
+              name="star-o"
+              size={22}
+              color={item.isRead ? colors.gray : colors.black}
+            />
           )}
         </TouchableOpacity>
       </View>
