@@ -1,8 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { colors } from "../../assets/colors";
 
-const EmailItem = ({item}) => {
+const EmailItem = ({ item }) => {
   return (
     <View style={styles.emailContainer}>
       <Image source={{ uri: item.senderImageUrl }} style={styles.avatar} />
@@ -24,7 +25,7 @@ export default EmailItem;
 
 const styles = StyleSheet.create({
   emailContainer: {
-    height: 90,
+    height: 80,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
@@ -35,11 +36,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#5d5d5d",
+    color: colors.gray,
   },
   text: {
     fontWeight: "500",
-    color: "#5d5d5d",
+    color: colors.gray,
     fontSize: 14,
   },
   actionContainer: {
@@ -47,5 +48,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     height: "90%",
   },
-  sentDate: { fontWeight: "500", fontSize: 14, color: "#5d5d5d" },
+  sentDate: { fontWeight: "500", fontSize: 14, color: colors.gray },
 });
