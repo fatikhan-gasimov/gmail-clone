@@ -19,7 +19,7 @@ export default FilterItem;
 const styles = StyleSheet.create({
   container: {
     height: 34,
-    borderWidth: 1.3,
+    borderWidth: 1.1,
     borderRadius: 8,
     borderColor: colors.gray,
     flexDirection: "row",

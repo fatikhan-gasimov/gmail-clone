@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         )}
       />
-      <ActionButton isVisible={actionTextVisible} />
+      <ActionButton isVisible={actionTextVisible} navigation={navigation} />
       <StatusBar style="dark" backgroundColor={colors.white} />
     </SafeAreaView>
   );

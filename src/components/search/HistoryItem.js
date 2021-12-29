@@ -1,13 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
 const HistoryItem = ({ item }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} activeOpacity={0.6}>
       <FontAwesome5 name="history" size={20} color={colors.gray} />
       <Text style={styles.text}>{item.text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

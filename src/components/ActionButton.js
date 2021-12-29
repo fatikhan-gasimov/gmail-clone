@@ -4,9 +4,15 @@ import { FontAwesome } from "@expo/vector-icons";
 import { colors } from "../../assets/colors";
 import { TouchableOpacity } from "react-native";
 
-const ActionButton = ({ isVisible }) => {
+const ActionButton = ({ isVisible, navigation }) => {
   return (
-    <TouchableOpacity style={[{ width: isVisible ? 120 : 60}, styles.actionButtonContainer]} activeOpacity={0.9}>
+    <TouchableOpacity
+      style={[{ width: isVisible ? 120 : 60 }, styles.actionButtonContainer]}
+      activeOpacity={0.9}
+      onPress={() => {
+        navigation.navigate("Compose");
+      }}
+    >
       <FontAwesome name="pencil" size={22} color="black" />
       {isVisible ? <Text style={styles.text}>Compose</Text> : null}
     </TouchableOpacity>
