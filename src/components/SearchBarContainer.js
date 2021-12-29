@@ -2,18 +2,15 @@ import React from "react";
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { TextInput } from "react-native";
+import { TouchableOpacity } from "react-native";
+import { colors } from "../../assets/colors";
 
 const SearchBarContainer = ({ navigation }) => {
   return (
     <View style={styles.searchContainer}>
-      <Pressable
-        onPress={() => {
-            navigation.openDrawer();
-        }}
-      >
+      <TouchableOpacity activeOpacity={0.6}>
         <Feather name="menu" size={22} color="black" />
-      </Pressable>
-
+      </TouchableOpacity>
       <Text
         style={styles.searchBar}
         onPress={() => {
@@ -40,18 +37,19 @@ const styles = StyleSheet.create({
     width: "96%",
     borderRadius: 30,
     alignSelf: "center",
-    backgroundColor: "#eef2fb",
+    backgroundColor: colors.lightBlue,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 14,
     justifyContent: "space-between",
+    marginBottom: 5
   },
   searchBar: {
     flex: 1,
     marginHorizontal: 10,
     fontSize: 16,
     fontWeight: "600",
-    color: "gray",
+    color: colors.gray,  
   },
   avatar: { height: 32, width: 32 },
 });

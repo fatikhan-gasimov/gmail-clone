@@ -6,14 +6,15 @@ import SearchBarContainer from "../src/components/SearchBarContainer";
 import EmailItem from "../src/components/EmailItem";
 import { emails } from "../assets/emails";
 import ActionButton from "../src/components/ActionButton";
+import { colors } from "../assets/colors";
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const [offset, setOffset] = useState(0);
   const [actionTextVisible, setActionTextVisible] = useState(0);
 
   return (
     <SafeAreaView style={styles.container}>
-    <SearchBarContainer  navigation={navigation}/>
+      <SearchBarContainer navigation={navigation} />
       <FlatList
         showsVerticalScrollIndicator={false}
         data={emails}
@@ -21,22 +22,19 @@ const HomeScreen = ({navigation}) => {
         keyExtractor={(item) => item.id}
         onScroll={(event) => {
           var currentOffset = event.nativeEvent.contentOffset.y;
-          var direction =
-            currentOffset > offset
-              ? "down"
-              : "up";
+          var direction = currentOffset > offset ? "down" : "up";
           setOffset(currentOffset);
           if (direction == "up") setActionTextVisible(false);
           else setActionTextVisible(true);
         }}
         ListHeaderComponent={() => (
-          <View style={{ marginTop: 10 }}>
+          <View style={styles.headerTitle}>
             <Text>Primary</Text>
           </View>
         )}
       />
       <ActionButton isVisible={actionTextVisible} />
-      <StatusBar style="dark" backgroundColor="white" />
+      <StatusBar style="dark" backgroundColor={colors.white} />
     </SafeAreaView>
   );
 };
@@ -48,6 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     marginTop: 10,
-    backgroundColor: "white",
+    backgroundColor: colors.white,
   },
+  headerTitle: { marginTop: 10, marginLeft: 5 },
 });
