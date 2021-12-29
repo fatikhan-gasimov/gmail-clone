@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { colors } from "../../assets/colors";
+import { colors } from "../../../assets/colors";
 
 const EmailItem = ({ item }) => {
   return (
@@ -15,7 +15,13 @@ const EmailItem = ({ item }) => {
       </View>
       <View style={styles.actionContainer}>
         <Text style={styles.sentDate}>{item.sentDate}</Text>
-        <FontAwesome name="star-o" size={22} color="gray" />
+        <TouchableOpacity>
+          {item.isSaved ? (
+            <FontAwesome name="star" size={22} color={colors.orange} />
+          ) : (
+            <FontAwesome name="star-o" size={22} color={colors.gray} />
+          )}
+        </TouchableOpacity>
       </View>
     </View>
   );

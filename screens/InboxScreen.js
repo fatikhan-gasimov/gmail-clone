@@ -6,6 +6,7 @@ import SearchBarContainer from "../src/components/inbox/SearchBarContainer";
 import { emails } from "../assets/emails";
 import ActionButton from "../src/components/inbox/ActionButton";
 import { colors } from "../assets/colors";
+import EmailItem from "../src/components/inbox/EmailItem";
 
 const HomeScreen = ({ navigation }) => {
   const [offset, setOffset] = useState(0);
