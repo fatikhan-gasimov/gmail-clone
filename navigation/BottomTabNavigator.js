@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { colors } from "../assets/colors";
-import HomeScreen from "../screens/HomeScreen";
+import InboxScreen from "../screens/InboxScreen";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import BottomTabContainer from "./BottomTabContainer";
 
@@ -27,8 +27,8 @@ const BottomTabNavigator = () => {
   return (
     <Tab.Navigator shifting={true} screenOptions={screenOptions}>
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="Inbox"
+        component={InboxScreen}
         options={{
           headerShown: false,
           tabBarLabel: "Mail",
@@ -44,7 +44,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Meet"
-        component={HomeScreen}
+        component={InboxScreen}
         options={{
           headerShown: false,
           tabBarLabel: "Meet",

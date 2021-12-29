@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { TextInput } from "react-native";
 import { TouchableOpacity } from "react-native";
-import { colors } from "../../assets/colors";
-import { fontFamily } from "../../assets/font";
+import { colors } from "../../../assets/colors";
+import { fontFamily } from "../../../assets/font";
 
 const SearchBarContainer = ({ navigation }) => {
   return (
