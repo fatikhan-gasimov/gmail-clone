@@ -4,6 +4,7 @@ import { colors } from "../assets/colors";
 import InboxScreen from "../screens/InboxScreen";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import BottomTabContainer from "./BottomTabContainer";
+import MeetScreen from "../screens/MeetScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -44,7 +45,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Meet"
-        component={InboxScreen}
+        component={MeetScreen}
         options={{
           headerShown: false,
           tabBarLabel: "Meet",

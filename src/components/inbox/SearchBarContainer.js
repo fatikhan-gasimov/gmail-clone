@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { TextInput } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { colors } from "../../../assets/colors";
 import { fontFamily } from "../../../assets/font";
+import ProfileModal from "../profile/ProfileModal";
 
 const SearchBarContainer = ({ navigation }) => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const showProfileModal = () => {
+    setModalVisible(!modalVisible);
+  };
   return (
     <View style={styles.searchContainer}>
       <TouchableOpacity activeOpacity={0.6}>
@@ -20,7 +25,7 @@ const SearchBarContainer = ({ navigation }) => {
       >
         Search in mail
       </Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => showProfileModal()}>
         <Image
           source={{
             uri: "https://camo.githubusercontent.com/06b39fc6b7e1ab60119bb11626220535f002634fe5e4bada9362ac26978ab6e1/68747470733a2f2f7261772e6769746875622e636f6d2f656c61646e6176612f6d6174657269616c2d6c65747465722d69636f6e732f6d61737465722f646973742f706e672f522e706e67",
@@ -28,6 +33,12 @@ const SearchBarContainer = ({ navigation }) => {
           style={styles.avatar}
         />
       </TouchableOpacity>
+      <ProfileModal
+        open={modalVisible}
+        onClose={() => {
+          setModalVisible(false);
+        }}
+      />
     </View>
   );
 };
