@@ -12,39 +12,27 @@ export const search_history = [
     text: "amazon",
   },
   {
-    id: 4,
-    text: "Flight date",
-  },
-  {
     id: 5,
-    text: "suspension",
+    text: "google",
   },
   {
     id: 6,
-    text: "rmv",
+    text: "github",
   },
   {
     id: 7,
-    text: "amazon",
-  },
-  {
-    id: 8,
-    text: "Flight date",
+    text: "sample",
   },
   {
     id: 9,
-    text: "suspension",
+    text: "learn",
   },
   {
     id: 10,
-    text: "rmv",
+    text: "react",
   },
   {
     id: 11,
-    text: "amazon",
-  },
-  {
-    id: 12,
-    text: "Flight date",
+    text: "react native",
   },
 ];
