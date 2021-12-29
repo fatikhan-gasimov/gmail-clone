@@ -17,13 +17,12 @@ import { search_history } from "../assets/search_history";
 const SearchScreen = ({ navigation }) => {
   let [historyItems, setHistoryItems] = useState(search_history);
 
-  textChangeHandler = (text) => {
+  textChangeHandler = (text ="") => {
     if (text == "") setHistoryItems(search_history);
     else {
       const filteredItems = historyItems.filter((item) => {
         return item.text.includes(text.toLowerCase());
       });
-
       setHistoryItems(filteredItems);
     }
   };

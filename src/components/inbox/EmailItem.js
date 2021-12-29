@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
 import { fontFamily } from "../../../assets/font";
 
 const EmailItem = ({ item }) => {
+  const [isSaved, setIsSaved] = useState(item.isSaved);
+  const onPressIsSaved = (isSaved) => {
+    setIsSaved(!isSaved);
+  };
   return (
     <View style={styles.emailContainer}>
       <Image source={{ uri: item.senderImageUrl }} style={styles.avatar} />
@@ -46,8 +50,8 @@ const EmailItem = ({ item }) => {
         >
           {item.sentDate}
         </Text>
-        <TouchableOpacity>
-          {item.isSaved ? (
+        <TouchableOpacity  onPress={() => onPressIsSaved(isSaved)}>
+          {isSaved ? (
             <FontAwesome name="star" size={22} color={colors.orange} />
           ) : (
             <FontAwesome

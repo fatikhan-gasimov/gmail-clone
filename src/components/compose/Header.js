@@ -7,6 +7,7 @@ import {
   Entypo,
 } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
+import { fontFamily } from "../../../assets/font";
 const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -54,6 +55,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     flex: 1,
     color: colors.darkGray,
+    fontFamily: fontFamily.medium
+
   },
   icon: {
     marginLeft: 15,

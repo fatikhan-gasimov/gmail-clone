@@ -2,15 +2,16 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../../../assets/colors";
 import { AntDesign } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
 const FilterItem = (props) => {
   const { text, iconVisible } = props;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Text style={styles.filterText}>{text}</Text>
       {iconVisible ? (
         <AntDesign name="caretdown" size={10} color={colors.gray} />
       ) : null}
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -32,5 +33,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.gray,
     marginHorizontal: 5,
+    fontWeight: "500"
   },
 });

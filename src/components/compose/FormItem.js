@@ -4,6 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { TextInput } from "react-native";
 import { colors } from "../../../assets/colors";
+
 const FormItem = ({ title, iconVisible }) => {
   return (
     <View style={styles.formContainer}>

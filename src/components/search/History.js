@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     margin: 10,
-    color: colors.gray,
+    color: colors.darkGray,
     fontSize: 16,
   },
 });

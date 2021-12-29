@@ -10,7 +10,8 @@ const Filter = () => {
       <FilterItem text="To" iconVisible={true} />
       <FilterItem text="Attachment" iconVisible={true} />
       <FilterItem text="Date" iconVisible={true} />
-      <FilterItem text="is unread"  />
+      <FilterItem text="Is unread"  />
+      <FilterItem text="Eclude calendar updates"  />
     </ScrollView>
   );
 };
