@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { colors } from "../../assets/colors";
+import { colors } from "../../../assets/colors";
 import { TouchableOpacity } from "react-native";
-import { fontFamily } from "../../assets/font";
+import { fontFamily } from "../../../assets/font";
 
 const ActionButton = ({ isVisible, navigation }) => {
   return (
@@ -25,7 +25,7 @@ export default ActionButton;
 const styles = StyleSheet.create({
   actionButtonContainer: {
     height: 60,
-    shadowColor: "#000",
+    shadowColor: colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 2,

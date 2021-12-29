@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SearchBarContainer from "../src/components/inbox/SearchBarContainer";
 import { emails } from "../assets/emails";
-import ActionButton from "../src/components/ActionButton";
+import ActionButton from "../src/components/inbox/ActionButton";
 import { colors } from "../assets/colors";
 
 const HomeScreen = ({ navigation }) => {
