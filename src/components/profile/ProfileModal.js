@@ -9,35 +9,42 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
+import Swipeable from "react-native-gesture-handler/Swipeable";
+import GestureRecognizer, {
+  swipeDirections,
+} from "react-native-swipe-gestures";
+
 const ProfileModal = ({ open, onClose }) => {
   return (
-    <Modal
-      transparent
-      visible={open}
-      animationType="fade"
-      onRequestClose={onClose}
-    >
-      <View style={styles.modalContainer}>
-        <View style={styles.innerContainer}>
-          <View style={styles.header}>
-            <TouchableOpacity onPress={onClose}>
-              <Ionicons name="close" size={24} color={colors.gray} />
-            </TouchableOpacity>
+    <GestureRecognizer onSwipeDown={onClose}>
+      <Modal
+        transparent
+        visible={open}
+        animationType="slide"
+        onRequestClose={onClose}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.innerContainer}>
+            <View style={styles.header}>
+              <TouchableOpacity onPress={onClose}>
+                <Ionicons name="close" size={24} color={colors.gray} />
+              </TouchableOpacity>
 
-            <Image
-              style={{ height: 30, width: 90 }}
-              source={{
-                uri: "https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png",
-              }}
-            />
-            <View style={{ height: 24, width: 24 }} />
-          </View>
-          <View style={styles.modalBody}>
-            <Text>modal body</Text>
+              <Image
+                style={{ height: 30, width: 90 }}
+                source={{
+                  uri: "https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png",
+                }}
+              />
+              <View style={{ height: 24, width: 24 }} />
+            </View>
+            <View style={styles.modalBody}>
+              <Text>modal body</Text>
+            </View>
           </View>
         </View>
-      </View>
-    </Modal>
+      </Modal>
+    </GestureRecognizer>
   );
 };
 

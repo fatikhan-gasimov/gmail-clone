@@ -31,13 +31,7 @@ const EmailItem = ({ item }) => {
         >
           {item.subject}
         </Text>
-        <Text
-          style={[
-            styles.text,
-            item.isRead ? { color: colors.gray } : styles.read,
-          ]}
-          numberOfLines={1}
-        >
+        <Text style={styles.text} numberOfLines={1}>
           {item.description}
         </Text>
       </View>
@@ -50,7 +44,7 @@ const EmailItem = ({ item }) => {
         >
           {item.sentDate}
         </Text>
-        <TouchableOpacity  onPress={() => onPressIsSaved(isSaved)}>
+        <TouchableOpacity onPress={() => onPressIsSaved(isSaved)}>
           {isSaved ? (
             <FontAwesome name="star" size={22} color={colors.orange} />
           ) : (

@@ -2,7 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../../../assets/colors";
 import { AntDesign } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import {
+  TouchableHighlight,
+  TouchableOpacity,
+} from "react-native-gesture-handler";
 const FilterItem = (props) => {
   const { text, iconVisible } = props;
   return (
@@ -33,6 +36,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.gray,
     marginHorizontal: 5,
-    fontWeight: "500"
+    fontWeight: "500",
   },
 });

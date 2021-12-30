@@ -6,5 +6,6 @@ export const colors = {
   lightBlue: "#eef2fb",
   white: "white",
   black: "black",
-  orange: "orange"
+  orange: "orange",
+  touch: "#dbdce0"
 };

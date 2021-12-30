@@ -6,6 +6,8 @@ import { TouchableOpacity } from "react-native";
 import { colors } from "../../../assets/colors";
 import { fontFamily } from "../../../assets/font";
 import ProfileModal from "../profile/ProfileModal";
+import { TouchableHighlight } from "react-native-gesture-handler";
+import { commonStyles } from "../common/style";
 
 const SearchBarContainer = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -14,9 +16,13 @@ const SearchBarContainer = ({ navigation }) => {
   };
   return (
     <View style={styles.searchContainer}>
-      <TouchableOpacity activeOpacity={0.6}>
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={commonStyles.btn}
+        onPress={() => {}}
+      >
         <Feather name="menu" size={22} color="black" />
-      </TouchableOpacity>
+      </TouchableHighlight>
       <Text
         style={styles.searchBar}
         onPress={() => {

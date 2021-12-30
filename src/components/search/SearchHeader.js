@@ -9,25 +9,34 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
+import { TouchableHighlight } from "react-native-gesture-handler";
+import { commonStyles } from "../common/style";
 
 const SearchHeader = (props) => {
- 
   return (
     <View style={styles.searchBarContainer}>
-      <TouchableOpacity
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={commonStyles.btn}
         onPress={() => {
           props.navigation.goBack();
         }}
       >
         <Feather name="arrow-left" size={24} color={colors.gray} />
-      </TouchableOpacity>
+      </TouchableHighlight>
       <TextInput
         style={styles.searchBar}
         placeholder="Search in mail"
         autoFocus
         onChangeText={(text) => props.onChange(text)}
       />
-      <MaterialIcons name="keyboard-voice" size={24} color={colors.gray} />
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={commonStyles.btn}
+        onPress={() => {}}
+      >
+        <MaterialIcons name="keyboard-voice" size={24} color={colors.gray} />
+      </TouchableHighlight>
     </View>
   );
 };
@@ -42,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomColor: colors.lightGray,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingHorizontal: 15,
+    paddingHorizontal: 12,
   },
   searchBar: {
     flex: 1,
