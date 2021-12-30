@@ -9,4 +9,5 @@ export const colors = {
   orange: "orange",
   touch: "#dbdce0",
   red: "#b22222",
+  green: "green"
 };

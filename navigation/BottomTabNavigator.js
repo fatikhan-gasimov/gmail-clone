@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { colors } from "../assets/colors";
 import InboxScreen from "../screens/InboxScreen";
-import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { Ionicons, AntDesign, MaterialIcons } from "@expo/vector-icons";
 import BottomTabContainer from "./BottomTabContainer";
 import MeetScreen from "../screens/MeetScreen";
 
@@ -38,15 +38,15 @@ const BottomTabNavigator = () => {
             backgroundColor: colors.red,
             fontSize: 12,
             height: 18,
-            width: 18
+            width: 24,
           },
           tabBarIcon: ({ color, size, focused }) =>
             focused ? (
               <BottomTabContainer>
-                <Ionicons name="mail" size={size} color={color} />
+                <MaterialIcons name="mail-outline" size={size} color={color} />
               </BottomTabContainer>
             ) : (
-              <Ionicons name="mail" size={size} color={color} />
+              <MaterialIcons name="mail-outline" size={size} color={color} />
             ),
         }}
       />

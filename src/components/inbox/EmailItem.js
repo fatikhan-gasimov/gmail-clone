@@ -64,11 +64,12 @@ export default EmailItem;
 
 const styles = StyleSheet.create({
   emailContainer: {
-    height: 80,
+    height: 88,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
-    marginVertical: 5,
+    backgroundColor: "white",
+    paddingHorizontal: 6,
   },
   avatar: { height: 44, width: 44 },
   emailContent: { flex: 1, marginHorizontal: 10, justifyContent: "center" },

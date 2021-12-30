@@ -7,6 +7,10 @@ import { emails } from "../assets/emails";
 import ActionButton from "../src/components/inbox/ActionButton";
 import { colors } from "../assets/colors";
 import EmailItem from "../src/components/inbox/EmailItem";
+import { SwipeListView } from "react-native-swipe-list-view";
+import { ScrollView } from "react-native-gesture-handler";
+
+import { Ionicons } from "@expo/vector-icons";
 
 const HomeScreen = ({ navigation }) => {
   const [offset, setOffset] = useState(0);
@@ -23,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <SearchBarContainer navigation={navigation} />
-      <FlatList
+      {/* <FlatList
         showsVerticalScrollIndicator={false}
         data={emails}
         renderItem={({ item }) => <EmailItem item={item} />}
@@ -31,6 +35,30 @@ const HomeScreen = ({ navigation }) => {
         onScroll={(event) => actionButtonVisibilityHandler(event)}
         ListHeaderComponent={() => (
             <Text style={styles.headerTitle}>Primary</Text>
+        )}
+      /> */}
+      <SwipeListView
+        scrollEnabled={true}
+        data={emails}
+        renderItem={({ item }) => <EmailItem item={item} />}
+        onScroll={(event) => actionButtonVisibilityHandler(event)}
+        swipeToClosePercent={100}
+        ListHeaderComponent={() => (
+          <Text style={styles.headerTitle}>Primary</Text>
+        )}
+        renderHiddenItem={(data, rowMap) => (
+          <View style={styles.rowBack}>
+            <Ionicons
+              name="md-archive-outline"
+              size={24}
+              color={colors.black}
+            />
+            <Ionicons
+              name="md-archive-outline"
+              size={24}
+              color={colors.black}
+            />
+          </View>
         )}
       />
       <ActionButton isVisible={actionTextVisible} navigation={navigation} />
@@ -44,9 +72,16 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 10,
     marginTop: 10,
     backgroundColor: colors.white,
   },
-  headerTitle: { marginTop: 10, marginLeft: 5 },
+  headerTitle: { marginTop: 10, marginLeft: 10 },
+  rowBack: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: colors.green,
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
 });
