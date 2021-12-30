@@ -8,35 +8,61 @@ import {
 } from "@expo/vector-icons";
 import { colors } from "../../../assets/colors";
 import { fontFamily } from "../../../assets/font";
+import { commonStyles } from "../common/style";
+import { TouchableHighlight } from "react-native-gesture-handler";
 const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={styles.iconContainer}
         onPress={() => {
           navigation.goBack();
         }}
       >
         <Feather name="arrow-left" size={26} color={colors.darkGray} />
-      </TouchableOpacity>
+      </TouchableHighlight>
+
       <Text style={styles.headerTitle}>Compose</Text>
-      <MaterialCommunityIcons
-        style={styles.icon}
-        name="attachment"
-        size={26}
-        color={colors.darkGray}
-      />
-      <MaterialCommunityIcons
-        style={styles.icon}
-        name="send-outline"
-        size={26}
-        color={colors.darkGray}
-      />
-      <MaterialCommunityIcons
-        style={styles.icon}
-        name="dots-vertical"
-        size={26}
-        color={colors.darkGray}
-      />
+
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={styles.iconContainer}
+        onPress={() => {}}
+      >
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name="attachment"
+          size={26}
+          color={colors.darkGray}
+        />
+      </TouchableHighlight>
+
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={styles.iconContainer}
+        onPress={() => {}}
+      >
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name="send-outline"
+          size={26}
+          color={colors.darkGray}
+        />
+      </TouchableHighlight>
+
+      <TouchableHighlight
+        underlayColor={colors.touch}
+        style={styles.iconContainer}
+        onPress={() => {}}
+      >
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name="dots-vertical"
+          size={26}
+          color={colors.darkGray}
+        />
+      </TouchableHighlight>
     </View>
   );
 };
@@ -55,10 +81,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     flex: 1,
     color: colors.darkGray,
-    fontFamily: fontFamily.medium
-
+    fontFamily: fontFamily.medium,
   },
-  icon: {
-    marginLeft: 15,
+  icon: {},
+  iconContainer: {
+    borderRadius: 20,
+    padding: 6,
   },
 });

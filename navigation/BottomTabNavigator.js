@@ -33,6 +33,13 @@ const BottomTabNavigator = () => {
         options={{
           headerShown: false,
           tabBarLabel: "Mail",
+          tabBarBadge: 7,
+          tabBarBadgeStyle: {
+            backgroundColor: colors.red,
+            fontSize: 12,
+            height: 18,
+            width: 18
+          },
           tabBarIcon: ({ color, size, focused }) =>
             focused ? (
               <BottomTabContainer>

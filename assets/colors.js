@@ -7,5 +7,6 @@ export const colors = {
   white: "white",
   black: "black",
   orange: "orange",
-  touch: "#dbdce0"
+  touch: "#dbdce0",
+  red: "#b22222",
 };
